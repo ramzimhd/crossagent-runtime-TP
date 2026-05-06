@@ -68,7 +68,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ramzimhd/crossagent-runtime-TP"
+    "url": "git+https://github.com/ramzimhd/crossagent-runtime-TP.git"
   },
   "homepage": "https://github.com/ramzimhd/crossagent-runtime-TP",
   "devDependencies": {

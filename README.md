@@ -4,9 +4,39 @@
 
 # Cross Agents Runtime (TypeScript)
 
+[![npm](https://img.shields.io/npm/v/crossagents-runtime/preview?label=npm&logo=npm&color=cb3837)](https://www.npmjs.com/package/crossagents-runtime)
+[![Node](https://img.shields.io/node/v/crossagents-runtime?logo=node.js&logoColor=white)](https://www.npmjs.com/package/crossagents-runtime)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 Cross Agents Runtime is a provider-agnostic, model-adaptive agent runtime for building controlled mono-agent and multi-agent systems on Node.js / TypeScript. It picks an execution pattern that fits a given task, model, policy, and operational constraints, then runs it inside an audited, bounded session.
 
 This repository contains the TypeScript implementation of the framework. Implementations in other ecosystems (.NET, Python) live in separate repositories so each can follow the conventions and release cadence of its own ecosystem.
+
+## Installation
+
+The package is published to [npm](https://www.npmjs.com/package/crossagents-runtime) at version `0.1.0-preview.1` under the `preview` dist-tag. Requires Node `>= 20`.
+
+```sh
+# pin the preview tag
+npm install crossagents-runtime@preview
+
+# or pin the version explicitly
+npm install crossagents-runtime@0.1.0-preview.1
+
+# pnpm / yarn equivalents
+pnpm add crossagents-runtime@preview
+yarn add crossagents-runtime@preview
+```
+
+After install:
+
+```ts
+import { AgentRuntime, RuntimeOptions } from "crossagents-runtime/core";
+import { NoToolPattern, PlanExecuteValidatePattern } from "crossagents-runtime/patterns";
+import { FakeModelAdapter, InMemoryAuditSink } from "crossagents-runtime/testing";
+```
+
+The package ships ESM-only (`"type": "module"`) and exposes per-area subpath imports (`/abstractions`, `/core`, `/patterns`, `/tooling`, `/memory`, `/testing`).
 
 ## What it is
 
