@@ -1,16 +1,20 @@
-# CrossAgent Runtime (TypeScript)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/ramzimhd/crossagent-runtime-TP/main/logo.png" alt="Cross Agents Runtime" width="160" />
+</p>
 
-CrossAgent Runtime is a provider-agnostic, model-adaptive agent runtime for building controlled mono-agent and multi-agent systems on Node.js / TypeScript. It picks an execution pattern that fits a given task, model, policy, and operational constraints, then runs it inside an audited, bounded session.
+# Cross Agents Runtime (TypeScript)
+
+Cross Agents Runtime is a provider-agnostic, model-adaptive agent runtime for building controlled mono-agent and multi-agent systems on Node.js / TypeScript. It picks an execution pattern that fits a given task, model, policy, and operational constraints, then runs it inside an audited, bounded session.
 
 This repository contains the TypeScript implementation of the framework. Implementations in other ecosystems (.NET, Python) live in separate repositories so each can follow the conventions and release cadence of its own ecosystem.
 
 ## What it is
 
-- A small set of stable contracts (`crossagent-runtime/abstractions`) describing models, tools, memory, patterns, policy, and audit.
-- A minimal runtime host (`crossagent-runtime/core`) that registers adapters and patterns, selects one for each task, runs it, and surfaces a structured result.
-- A first-party set of safe patterns (`crossagent-runtime/patterns`): a no-tool single call, a Plan-Execute-Validate flow, a JSON plan skeleton, and a strictly bounded ReAct loop.
-- Optional layers for tooling (`crossagent-runtime/tooling`) and memory (`crossagent-runtime/memory`) that can be plugged in independently.
-- Deterministic test doubles (`crossagent-runtime/testing`) for pattern and runtime tests with no external dependencies.
+- A small set of stable contracts (`crossagents-runtime/abstractions`) describing models, tools, memory, patterns, policy, and audit.
+- A minimal runtime host (`crossagents-runtime/core`) that registers adapters and patterns, selects one for each task, runs it, and surfaces a structured result.
+- A first-party set of safe patterns (`crossagents-runtime/patterns`): a no-tool single call, a Plan-Execute-Validate flow, a JSON plan skeleton, and a strictly bounded ReAct loop.
+- Optional layers for tooling (`crossagents-runtime/tooling`) and memory (`crossagents-runtime/memory`) that can be plugged in independently.
+- Deterministic test doubles (`crossagents-runtime/testing`) for pattern and runtime tests with no external dependencies.
 
 ## What it isn't
 
@@ -50,7 +54,7 @@ const profile = {
 };
 
 runtime
-  .registerModel(new FakeModelAdapter(profile, "Hello from CrossAgent Runtime."))
+  .registerModel(new FakeModelAdapter(profile, "Hello from Cross Agents Runtime."))
   .registerPattern(new NoToolPattern())
   .registerPattern(new PlanExecuteValidatePattern());
 
@@ -68,12 +72,12 @@ A self-contained runnable version of this lives in [examples/minimal-runtime.ts]
 
 | Subpath | Purpose |
 | --- | --- |
-| `crossagent-runtime/abstractions` | Stable contracts (models, tools, memory, patterns, policy, audit) |
-| `crossagent-runtime/core` | Runtime host, session, selector, default policy engine, audit pipeline |
-| `crossagent-runtime/patterns` | First-party safe patterns |
-| `crossagent-runtime/tooling` | Optional tool registry, validator, executor, normalizer |
-| `crossagent-runtime/memory` | Optional retrieval, ranking, compression, sliding buffer |
-| `crossagent-runtime/testing` | Deterministic test doubles |
+| `crossagents-runtime/abstractions` | Stable contracts (models, tools, memory, patterns, policy, audit) |
+| `crossagents-runtime/core` | Runtime host, session, selector, default policy engine, audit pipeline |
+| `crossagents-runtime/patterns` | First-party safe patterns |
+| `crossagents-runtime/tooling` | Optional tool registry, validator, executor, normalizer |
+| `crossagents-runtime/memory` | Optional retrieval, ranking, compression, sliding buffer |
+| `crossagents-runtime/testing` | Deterministic test doubles |
 
 ## Design principles
 
@@ -82,7 +86,7 @@ A self-contained runnable version of this lives in [examples/minimal-runtime.ts]
 3. **Bounded by default**: every shipped pattern declares step counts and risk levels; the runtime rejects unbounded configurations.
 4. **Optional middleware**: tooling and memory are separate subpaths and separate runtime services; they can be omitted entirely.
 5. **Auditable**: every session emits a canonical sequence of audit events suitable for compliance and debugging.
-6. **Deterministic to test**: `crossagent-runtime/testing` ships in-process fakes for every external dependency the framework defines.
+6. **Deterministic to test**: `crossagents-runtime/testing` ships in-process fakes for every external dependency the framework defines.
 7. **Small public surface**: contracts are short, immutable, and documented; framework code never exposes provider-specific types.
 
 ## Current status

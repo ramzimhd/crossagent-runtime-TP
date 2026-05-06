@@ -1,5 +1,5 @@
 {
-  "name": "crossagent-runtime",
+  "name": "crossagents-runtime",
   "version": "0.1.0-preview.1",
   "description": "Provider-agnostic, model-adaptive agent runtime for building controlled mono-agent and multi-agent systems on Node.js / TypeScript.",
   "type": "module",
@@ -39,7 +39,8 @@
     "dist",
     "src",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "logo.png"
   ],
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
@@ -63,13 +64,13 @@
     "multi-agent",
     "framework"
   ],
-  "author": "CrossAgent Runtime contributors",
+  "author": "Cross Agents Runtime contributors",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ramzimhd/crossagent-runtime-typescript"
+    "url": "https://github.com/ramzimhd/crossagent-runtime-TP"
   },
-  "homepage": "https://github.com/ramzimhd/crossagent-runtime-typescript",
+  "homepage": "https://github.com/ramzimhd/crossagent-runtime-TP",
   "devDependencies": {
     "@types/node": "^22.10.0",
     "rimraf": "^6.0.0",
