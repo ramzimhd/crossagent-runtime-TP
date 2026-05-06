@@ -1,0 +1,43 @@
+# Build / dist
+dist/
+build/
+
+# Dependencies
+node_modules/
+
+# Caches
+.tsbuildinfo
+*.tsbuildinfo
+.eslintcache
+.cache/
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# Secrets / env
+.env
+.env.*
+*.secret
+secrets.json
+
+# Packages
+*.tgz
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log

@@ -1,0 +1,80 @@
+{
+  "name": "crossagent-runtime",
+  "version": "0.1.0-preview.1",
+  "description": "Provider-agnostic, model-adaptive agent runtime for building controlled mono-agent and multi-agent systems on Node.js / TypeScript.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./abstractions": {
+      "types": "./dist/abstractions/index.d.ts",
+      "import": "./dist/abstractions/index.js"
+    },
+    "./core": {
+      "types": "./dist/core/index.d.ts",
+      "import": "./dist/core/index.js"
+    },
+    "./patterns": {
+      "types": "./dist/patterns/index.d.ts",
+      "import": "./dist/patterns/index.js"
+    },
+    "./tooling": {
+      "types": "./dist/tooling/index.d.ts",
+      "import": "./dist/tooling/index.js"
+    },
+    "./memory": {
+      "types": "./dist/memory/index.d.ts",
+      "import": "./dist/memory/index.js"
+    },
+    "./testing": {
+      "types": "./dist/testing/index.d.ts",
+      "import": "./dist/testing/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "clean": "rimraf dist",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "example": "tsx examples/minimal-runtime.ts",
+    "typecheck": "tsc --noEmit",
+    "prepack": "npm run clean && npm run build"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "agent",
+    "agents",
+    "ai",
+    "llm",
+    "runtime",
+    "orchestration",
+    "multi-agent",
+    "framework"
+  ],
+  "author": "CrossAgent Runtime contributors",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ramzimhd/crossagent-runtime-typescript"
+  },
+  "homepage": "https://github.com/ramzimhd/crossagent-runtime-typescript",
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "rimraf": "^6.0.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.7.0",
+    "vitest": "^2.1.0"
+  }
+}
